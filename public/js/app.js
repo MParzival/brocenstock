@@ -13,3 +13,70 @@ $(window).scroll(function(){
         $('.navbar').removeClass('opaque');
     }
 })
+
+// Animation page principale
+
+const titreSpans = document.querySelectorAll('h1 span');
+const btns = document.querySelectorAll('.btn-first');
+const logo = document.querySelector('.logo-image-principale');
+const medias = document.querySelectorAll('.bulle');
+const l1 = document.querySelector('.l1');
+const l2 = document.querySelector('.l2');
+
+window.addEventListener('load', () => {
+    
+    const TL = gsap.timeline({paused: true});
+
+    TL
+        .staggerFrom(titreSpans, 1 , { top: -50, opacity: 0, ease: "power2.out" }, 0.3)
+        .staggerFrom(btns, 1 , { opacity: 0, ease: "power2.out" }, 0.3, '-=1')
+        .from(l1 , 1 , {width: 0, ease: "power2.out"}, '-=2')
+        .from(l2 , 1 , {width: 0, ease: "power2.out"}, '-=2')
+        .from(logo , 0.4 , {transform: "scale(0)", ease: "power2.out"}, '-=2')
+        .from(l2 , 1 , {width: 0, ease: "power2.out"}, '-=2')
+        .staggerFrom(medias, 1 , { right: -200, ease: "power2.out" }, 0.3, '-=1');
+
+    TL.play();
+})
+
+// Animation scroll Magic
+
+const controller = new ScrollMagic.Controller();
+
+let tweenLi1 = TweenMax.staggerFromTo('.solLi1', 0.75, 
+        {opacity: 0, y: -100, ease: Power4.easeIn},
+        {opacity: 1, y: 0, ease: Power4.easeIn},
+        0.1
+);
+let tweenLi2 = TweenMax.staggerFromTo('.solLi2', 0.75, 
+        {opacity: 0, y: -100, ease: Power4.easeIn},
+        {opacity: 1, y: 0, ease: Power4.easeIn},
+        0.1
+);
+let tweenLi3 = TweenMax.staggerFromTo('.solLi3', 0.75, 
+        {opacity: 0, y: -100, ease: Power4.easeIn},
+        {opacity: 1, y: 0, ease: Power4.easeIn},
+        0.1
+);
+
+let scene = new ScrollMagic.Scene({ triggerElement: '#solution-debarras', offset: -75 })
+                                .triggerHook(0.5)
+                                // .addIndicators({name: 'li1', colorTrigger: 'blue', indent: 100})
+                                .setTween(tweenLi1)
+                                .reverse(false)
+                                .addTo(controller)
+
+let scene2 = new ScrollMagic.Scene({ triggerElement: '#solution-debarras', offset: -50 })
+                                .triggerHook(0.5)
+                                // .addIndicators({name: 'li2', colorTrigger: 'red', indent: 200})
+                                .setTween(tweenLi2)
+                                .reverse(false)
+                                .addTo(controller)
+
+let scene3 = new ScrollMagic.Scene({ triggerElement: '#solution-debarras', offset: -25 })
+                                .triggerHook(0.5)
+                                // .addIndicators({name: 'li3', colorTrigger: 'green', indent: 300})
+                                .setTween(tweenLi3)
+                                .reverse(false)
+                                .addTo(controller)
+

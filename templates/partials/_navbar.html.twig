@@ -10,16 +10,16 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item mr-1">
-                        <a href="#" class="nav-link">Débarras</a>
+                        <a href="{{ path('debarras') }}" class="nav-link">Débarras</a>
                     </li>
                     <li class="nav-item mr-1">
-                        <a href="#" class="nav-link">Brocante</a>
+                        <a href="{{ path('antiquite') }}" class="nav-link">Brocante / Antiquités</a>
                     </li>
                     <li class="nav-item mr-1">
                         <a href="{{ path('gallery') }}" class="nav-link">Galerie photo</a>
                     </li>
                     <li class="nav-item mr-1">
-                        <a href="" class="nav-link">Contact</a>
+                        <a href="{{ path('contact') }}" class="nav-link">Contact</a>
                     </li>
                 </ul>
                 
@@ -27,17 +27,3 @@
         </nav>
     </div>
 </header>
-
-
-
-{# <div class="container-navlinks">
-    <a href="#">Présentation</a>
-    <a href="#">Débarras</a>
-</div>
-<a class="logo-link" href="#">
-    Broc & Stock
-</a>
-<div class="nav-right">
-    <a href="#">Brocante</a>
-    <a href="{{ path('gallery') }}">Galerie photo</a>
-</div> #}

@@ -114,20 +114,26 @@ hr {
   }
 }
 
+/* Page Principale */
 /* Menu */
 #main-nav {
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
 
-.navbar-brand {
+.bg-dark {
+  background-color: black !important;
+}
+
+a.navbar-brand {
+  color: #ff7300 !important;
   font-size: 45px !important;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
 
 .navbar a {
-  color: white !important;
+  color: #ff7300 !important;
   font-size: 22px;
   font-weight: 700;
   -webkit-transition: all 0.4s ease;
@@ -149,9 +155,10 @@ hr {
 /***** Footer *****/
 footer {
   margin-top: 200px;
-  background: #17232d;
+  background: black;
   color: white;
   padding-bottom: 50px;
+  color: #ff7300;
 }
 
 footer .footer-container {
@@ -174,12 +181,14 @@ footer .footer-container .footer-contact {
   background: #ff7300;
   height: 300px;
   padding: 40px 70px;
+  color: black;
 }
 
 footer .footer-container .footer-contact .contact-title {
   font-size: 40px;
   color: #f1f1f1;
   margin-bottom: 20px;
+  color: black;
 }
 
 footer .footer-container .about-footer,
@@ -191,7 +200,7 @@ footer .footer-container .footer-list {
 footer .footer-container .about-footer .liste li a,
 footer .footer-container .medias-footer .liste li a,
 footer .footer-container .footer-list .liste li a {
-  color: white;
+  color: #ff7300;
 }
 
 footer .footer-container .about-footer .footer-title,
@@ -476,5 +485,41 @@ footer .footer-container .medias-footer a {
   padding-top: 100px;
   padding-bottom: 100px;
   font-size: 70px;
+}
+
+/****** Debarras *****/
+#debarras {
+  margin-top: 150px;
+}
+
+#debarras h1 {
+  font-weight: bold;
+  font-size: 50px;
+  margin-bottom: 100px;
+}
+
+#debarras p {
+  font-size: 25px;
+  text-align: center;
+}
+
+#debarras h3 {
+  font-weight: normal;
+  font-size: 45px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  text-decoration: underline;
+}
+
+#debarras .solLi {
+  font-size: 25px;
+  margin-top: 20px;
+}
+
+#debarras .para-end {
+  margin-top: 75px;
+  font-size: 30px;
+  color: #ff7300;
+  font-weight: bold;
 }
 /*# sourceMappingURL=app.css.map */

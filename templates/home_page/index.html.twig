@@ -2,8 +2,12 @@
 
 {% block title %}Accueil Broc & Stock{% endblock %}
 
-{% block body %}
+{% block stylesheets %}
+ 
+{% endblock %}
 
+{% block body %}
+{% include 'partials/_navbar.html.twig' %}
 <section class="home">
     <div class="background-image"></div>
     <h1>Broc & Stock</h1>
@@ -132,5 +136,5 @@
         </div>
     </div>
 </section>
-    
+{% include 'partials/_footer.html.twig' %}
 {% endblock %}
