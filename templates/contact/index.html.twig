@@ -1,20 +1,47 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ContactController!{% endblock %}
+{% block title %}Laissez moi un message{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+{% include "partials/_navbar.html.twig" %}
+<div class="container-box">
+    <div class="row mt-5">
+        <div class="col-md-12">
+            {% for message in app.flashes('message')  %}
+            <div class="alert alert-success" role="alert">
+                {{ message }}
+            </div>
+            {% endfor %}
+            <div class="box">
+                {{ form_start(contactForm, {'attr': {'class': 'formBloc'}}) }}
+                <div>
+                    <h6>Une question ? un conseil où tout simplement une demande de devis</h6>
+                    <h3>Contactez-nous</h3>
+                </div>
+                <div class="formGroupe">
+                    {{ form_row(contactForm.nom)  }}
+                </div>
+                <div class="formGroupe">
+                    {{ form_row(contactForm.email)  }}
+                </div>
+                <div class="formGroupe">
+                    {{ form_row(contactForm.phone)  }}
+                </div>
+                <div class="formGroupe">
+                    {{ form_row(contactForm.sujet)  }}
+                </div>
+                <div class="formGroupe">
+                    {{ form_row(contactForm.message)  }}
+                </div>
+                <div class="formGroupe">
+                    <button class="buttonSub">Envoyer</button>
+                </div>
+                {{ form_end(contactForm) }}
+            </div>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Applications/MAMP/htdocs/Perso/brocenstock/brocenstock/src/Controller/ContactController.php'|file_link(0) }}">src/Controller/ContactController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Applications/MAMP/htdocs/Perso/brocenstock/brocenstock/templates/contact/index.html.twig'|file_link(0) }}">templates/contact/index.html.twig</a></code></li>
-    </ul>
+        </div>
+    </div>
 </div>
+
+{% include "partials/_footer.html.twig" %}
 {% endblock %}

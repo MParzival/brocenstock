@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Product index{% endblock %}
+
+{% block body %}
+    <h1>Liste des objets</h1>
+    
+    <div class="container">
+        <a class="btn btn-primary" href="{{ path('add_product_new') }}"><i class="fas fa-plus"></i> Ajouter un nouvel
+            objet</a>
+        <div class="d-flex justify-content-content-around align-items-center flex-wrap">
+            {% for product in products %}
+            
+                <div class="card" style="width: 22rem; margin: 5px">
+                    <img class="card-img-top" src="{{ asset( 'images/products/'~ product.product )}}"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.name }}</h5>
+                        <p class="card-text">{{ product.description }}</p>
+                        <a href="{{ path('add_product_show', {'id': product.id}) }}" class="btn btn-success">
+                            <i class="fas fa-eye"></i>
+                        </a>
+                        <a href="{{ path('add_product_edit', {'id': product.id}) }}" class="btn btn-success">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                    </div>
+                </div>
+            
+            {% endfor %}
+        </div>
+    </div>
+    
+        
+    
+
+    {# <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Photo</th>
+                <th>UpdatedAt</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.description }}</td>
+                <td>
+                    <img src="{{ asset( 'images/products/'~ product.product )}}" style="width: 100px; height: 100px">
+                </td>
+                <td>{{ product.updatedAt ? product.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('add_product_show', {'id': product.id}) }}">show</a>
+                    <a href="{{ path('add_product_edit', {'id': product.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table> #}
+
+    
+{% endblock %}

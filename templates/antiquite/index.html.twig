@@ -1,23 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AntiquiteController!{% endblock %}
+{% block title %}Nous achetons et nous vendons !!{% endblock %}
 
 {% block body %}
 {% include 'partials/_navbar.html.twig' %}
 <section id="debarras" class="container">
 
-    <h1>Broc En Stock Antiquité/brocante à Saint-Genis-Les-Ollières (69)</h1>
+    <h1 style="color: #ff7300;">Broc En Stock Antiquité/brocante à Iriginy (69)</h1>
     <h3>Antiquaires et brocanteurs</h3>
-    <p class="">Véritables passionnés de l’histoire de l’art et la décoration d’intérieur, Stéphanie et Sébastien vous
-        accueillent dans leur boutique à Saint Genis Les Ollières.
+    <p class="">Véritables passionnés de la chine d'objets vintages, anciens, curieux ..., Sébastien vous trouvera la perle rare.
     </p>
     <p class="">
-        Chez nous, on y trouve de tout et il y a toujours un objet pour se souvenir d’un autre temps. Nous vous
-        ferons découvrir un grand nombre d’objets plus ou moins anciens, cela peut aller de l’amphore romaine daté du
+        Seb vous trouve de tout, il aura toujours un objet pour vous souvenir d’un autre temps. il vous
+        fera découvrir son univers dans les differents marché, vides greniers et brocante de la région. Cela peut aller de l’amphore romaine daté du
         Ier siècle à la chaise de designer du XXIe.
     </p>
     <p>
-        Amateurs ou non d’objets rares et anciens, vous y trouverez celui qui fera de votre décoration intérieure un
+        Amateurs ou non d’objets rares et anciens, il trouvera pour vous l'objet rare qui fera de votre intérieure un
         lieu unique. Nous dénichons pour vous tous types d’objets anciens ou d’occasion à venir découvrir en boutique.
     </p>
     <h3>Achat/vente d’objets anciens ou d’occasion </h3>
@@ -26,7 +25,16 @@
         anciens ou d’occasion (meubles, bibelots, horloges/montres, déco vintage…).
     </p>
     <h3>Découvrez notre univers antiquité & brocante</h3>
-    
+    <h4>Dernière acquisition ....</h4>
+    <div class="row mb-3">
+        {% for product in products %}
+            <div class="col-md-3">
+                <a href="{{ path('gallery') }}"><img src="{{ asset( 'images/products/'~ product.product )}}"
+                        class="img-fluid" alt="portfolio image"></a>
+                
+            </div>
+            {% endfor %}
+        </div>
 </section>
 
 {% include 'partials/_footer.html.twig' %}

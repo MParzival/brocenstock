@@ -4,6 +4,31 @@ $(document).on('click', '[data-toggle="lightbox"]', function(e){
     $(this).ekkoLightbox();
 })
 
+// Animation imput page contact
+const formGroupe = document.querySelector('.formGroupe');
+const inputs = document.querySelectorAll('.form-control');
+inputs.forEach(item => {
+    item.addEventListener('input', function(e){
+        console.log(e.target.value)
+        if (e.target.value != "") {
+            e.target.parentNode.classList.add('animation-input')
+        } else if (e.target.value === ""){
+            e.target.parentNode.classList.remove('animation-input')
+        }
+    })
+})
+
+
+// Input VichUploader
+// (Pour que le nom de l'image que vous avez selectionné soit inscrite dans l'input)
+
+$(document).ready(function(){
+    $("form").on("change", ".custom-file-input", function() {
+        var fileName = $(this).val().split("\\").pop();
+        $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+    });
+})
+
 // animation navbar
 
 $(window).scroll(function(){
