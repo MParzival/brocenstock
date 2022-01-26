@@ -29,9 +29,11 @@
     <div class="row mb-3">
         {% for product in products %}
             <div class="col-md-3">
-                <a href="{{ path('gallery') }}"><img src="{{ asset( 'images/products/'~ product.product )}}"
-                        class="img-fluid" alt="portfolio image"></a>
-                
+                <a href="{{ path('gallery') }}">
+                    {# <img src="{{ asset( 'images/products/'~ product.product) }}" class="img-fluid" alt="portfolio image"> #}
+                    <img src="{{ vich_uploader_asset( product, 'imageFileProduct' ) | imagine_filter('carre') }}" class="img-fluid"
+                        alt="portfolio image">
+                </a>
             </div>
             {% endfor %}
         </div>
