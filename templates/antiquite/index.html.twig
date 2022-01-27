@@ -26,12 +26,11 @@
     </p>
     <h3>Découvrez notre univers antiquité & brocante</h3>
     <h4>Dernière acquisition ....</h4>
-    <div class="row mb-3">
+    <div class="row mt-5 mb-5">
         {% for product in products %}
             <div class="col-md-3">
                 <a href="{{ path('gallery') }}"><img src="{{ asset( 'images/products/'~ product.product )}}"
-                        class="img-fluid" alt="portfolio image"></a>
-                
+                        class="img-fluid image-brocante" alt="portfolio image"></a>
             </div>
             {% endfor %}
         </div>
