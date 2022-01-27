@@ -2,48 +2,64 @@
 
 {% block title %}Galerie Photos{% endblock %}
 
+{% block stylesheets %}
+    <style>
+        body {
+            background-color: black !important;
+        }
+
+        .bg-dark{
+            background-color: #ff7300 !important;
+        }
+
+        a.navbar-brand{
+            color: black !important;
+        }
+
+        .navbar a {
+            color: black !important;
+        }
+
+        footer{
+            margin-top: 200px;
+            background: #ff7300;
+            color: white;
+            padding-bottom: 50px;
+            color: black;
+        }
+
+        .footer-contact{
+            flex-basis: 60%;
+            background: #ff7300;
+            height: 300px;
+            padding: 40px 70px;
+            color: black;
+        }
+
+        .contact-title{
+            font-size: 40px;
+            color: #f1f1f1;
+            margin-bottom: 20px;
+            color: black;
+        }
+    </style>
+{% endblock stylesheets %}
+
 {% block body %}
+    {% include "partials/_navbar.html.twig" %}
     <section id="galerie">
         <div class="container-fluid">
             <h2 class="text-center h2Photos">Découvrez notre univers en photo</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-10">
-                    <div class="row mb-3">
-                        <a href="https://unsplash.it/1200/768.jpg?image=251" data-toggle="lightbox"
-                            data-gallery="exemple-gallery" class="col-sm-4">
-                            <img src="https://unsplash.it/1200/768.jpg?image=251" class="img-fluid"
-                                alt="portfolio image">
-                        </a>
-                        <a href="https://unsplash.it/1200/768.jpg?image=252" data-toggle="lightbox"
-                            data-gallery="exemple-gallery" class="col-sm-4">
-                            <img src="https://unsplash.it/1200/768.jpg?image=252" class="img-fluid"
-                                alt="portfolio image">
-                        </a>
-                        <a href="https://unsplash.it/1200/768.jpg?image=253" data-toggle="lightbox"
-                            data-gallery="exemple-gallery" class="col-sm-4">
-                            <img src="https://unsplash.it/1200/768.jpg?image=253" class="img-fluid"
-                                alt="portfolio image">
-                        </a>
-                    </div>
-                    <div class="row">
-                        <a href="https://unsplash.it/1200/768.jpg?image=254" data-toggle="lightbox"
-                            data-gallery="exemple-gallery" class="col-sm-4">
-                            <img src="https://unsplash.it/1200/768.jpg?image=254" class="img-fluid"
-                                alt="portfolio image">
-                        </a>
-                        <a href="https://unsplash.it/1200/768.jpg?image=255" data-toggle="lightbox"
-                            data-gallery="exemple-gallery" class="col-sm-4">
-                            <img src="https://unsplash.it/1200/768.jpg?image=255" class="img-fluid"
-                                alt="portfolio image">
-                        </a>
-                        <a href="https://unsplash.it/1200/768.jpg?image=256" data-toggle="lightbox"
-                            data-gallery="exemple-gallery" class="col-sm-4">
-                            <img src="https://unsplash.it/1200/768.jpg?image=256" class="img-fluid"
-                                alt="portfolio image">
-                        </a>
-                    </div>
-                </div>
+            <div class="row text-center">
+                {% for product in products %}
+                    <a href="{{ asset( 'images/products/'~ product.product )}}" data-toggle="lightbox"
+                    data-gallery="exemple-gallery" class="col-md-4 col-sm-6 mb-5">
+                        <img src="{{ asset( 'images/products/'~ product.product )}}" class="img-fluid image-gallery"
+                            alt="portfolio image">
+                    </a>
+                {% endfor %}
             </div>
         </div>
     </section>
+    {% include "partials/_footer.html.twig" %}
 {% endblock %}

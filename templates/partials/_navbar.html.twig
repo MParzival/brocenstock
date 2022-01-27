@@ -1,25 +1,25 @@
 <header id="top">
     <div class="container">
         <nav id="main-nav" class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
-            <div class="container">
-                <a href="{{ path('home_page') }}" class="navbar-brand"> BROC & STOCK</a>
+            <div class="container-brand">
+                <a href="{{ path('home_page') }}" class="navbar-brand"> BROC en STOCK</a>
             </div>
             <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item mr-1">
-                        <a href="#" class="nav-link">Débarras</a>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="{{ path('antiquite') }}" class="nav-link">Brocante / Antiquités</a>
                     </li>
-                    <li class="nav-item mr-1">
-                        <a href="#" class="nav-link">Brocante</a>
+                    <li class="nav-item">
+                        <a href="{{ path('debarras') }}" class="nav-link">Débarras</a>
                     </li>
-                    <li class="nav-item mr-1">
+                    <li class="nav-item">
                         <a href="{{ path('gallery') }}" class="nav-link">Galerie photo</a>
                     </li>
-                    <li class="nav-item mr-1">
-                        <a href="" class="nav-link">Contact</a>
+                    <li class="nav-item">
+                        <a href="{{ path('contact') }}" class="nav-link">Contact</a>
                     </li>
                 </ul>
                 
@@ -27,17 +27,3 @@
         </nav>
     </div>
 </header>
-
-
-
-{# <div class="container-navlinks">
-    <a href="#">Présentation</a>
-    <a href="#">Débarras</a>
-</div>
-<a class="logo-link" href="#">
-    Broc & Stock
-</a>
-<div class="nav-right">
-    <a href="#">Brocante</a>
-    <a href="{{ path('gallery') }}">Galerie photo</a>
-</div> #}

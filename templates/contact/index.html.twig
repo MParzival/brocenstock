@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Laissez moi un message{% endblock %}
+
+{% block body %}
+{% include "partials/_navbar.html.twig" %}
+<div class="container-box">
+    <div class="row mt-5">
+        <div class="col-md-12">
+            {% for message in app.flashes('message')  %}
+            <div class="alert alert-success" role="alert">
+                {{ message }}
+            </div>
+            {% endfor %}
+            <div class="box">
+                {{ form_start(contactForm, {'attr': {'class': 'formBloc'}}) }}
+                <div>
+                    <h6>Une question ? un conseil où tout simplement une demande de devis</h6>
+                    <h3>Contactez-nous</h3>
+                </div>
+                <div class="formGroupe">
+                    {{ form_row(contactForm.nom)  }}
+                </div>
+                <div class="formGroupe">
+                    {{ form_row(contactForm.email)  }}
+                </div>
+                <div class="formGroupe">
+                    {{ form_row(contactForm.phone)  }}
+                </div>
+                <div class="formGroupe">
+                    {{ form_row(contactForm.sujet)  }}
+                </div>
+                <div class="formGroupe">
+                    {{ form_row(contactForm.message)  }}
+                </div>
+                <div class="formGroupe">
+                    <button class="buttonSub">Envoyer</button>
+                </div>
+                {{ form_end(contactForm) }}
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% include "partials/_footer.html.twig" %}
+{% endblock %}
